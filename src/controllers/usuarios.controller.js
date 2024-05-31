@@ -3,10 +3,12 @@ const getAllUsuarios = (req, res) => {
 };
 
 const createUsuario = (req, res) => {
+  console.log(req.body);
   res.send("ESTOY EN POST USUARIO");
 };
 
 const updateUsuario = (req, res) => {
+  console.log(req.params.usuario_id);
   res.send("ESTOY EN UPDATE USUARIO");
 };
 

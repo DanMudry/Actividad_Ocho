@@ -5,10 +5,10 @@ const {
   deleteUsuario,
   updateUsuario,
 } = require("../../controllers/usuarios.controller");
-
+//ruta /api/usuarios
 router.get("/", getAllUsuarios);
 router.post("/", createUsuario);
-router.delete("/", deleteUsuario);
-router.put("/", updateUsuario);
+router.delete("/:usuario_id", deleteUsuario);
+router.put("/:usuario_id", updateUsuario);
 
 module.exports = router;

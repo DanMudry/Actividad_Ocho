@@ -2,9 +2,18 @@
 @HOST = http://localhost:{{PORT}}
 
 GET {{HOST}}/api/usuarios
+Authorization: API-KEY
+
 ###
 POST {{HOST}}/api/usuarios
+Authorization: API-KEY
+Content-Type: application/json
+
+{
+  "nombre":"Daniel",
+  "apellido":"Mudry"
+}
 ###
-PUT {{HOST}}/api/usuarios
+PUT {{HOST}}/api/usuarios/55
 ###
 DELETE {{HOST}}/api/usuarios
