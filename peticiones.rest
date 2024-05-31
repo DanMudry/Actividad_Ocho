@@ -2,3 +2,9 @@
 @HOST = http://localhost:{{PORT}}
 
 GET {{HOST}}/api/usuarios
+###
+POST {{HOST}}/api/usuarios
+###
+PUT {{HOST}}/api/usuarios
+###
+DELETE {{HOST}}/api/usuarios
