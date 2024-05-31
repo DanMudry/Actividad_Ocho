@@ -5,6 +5,10 @@ GET {{HOST}}/api/usuarios
 Authorization: API-KEY
 
 ###
+GET {{HOST}}/api/usuarios/2
+Authorization: API-KEY
+
+###
 POST {{HOST}}/api/usuarios
 Authorization: API-KEY
 Content-Type: application/json
