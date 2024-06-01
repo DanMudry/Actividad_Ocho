@@ -1,28 +1,47 @@
 const Usuario = require("../models/usuario.model");
 
-const getAllUsuarios = async (req, res) => {
+const getAllUsuarios = async (req, res, next) => {
   try {
     const [result] = await Usuario.selectAll();
     //me quedo en result con la posicion cero del select
     res.json(result);
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    next(err);
   }
 };
 
-const getUsuarioById = async (req, res) => {
-  const [result] = await Usuario.selectById(req.params.usuario_id);
-  res.json(result);
+const getUsuarioById = async (req, res, next) => {
+  try {
+    const [result] = await Usuario.selectById(req.params.usuario_id);
+    if (result.length === 0) {
+      return res.status(404).json({ fatal: "Usuario No Encontrado" });
+    }
+    res.json(result[0]);
+  } catch (error) {
+    next(err);
+  }
 };
 
-function createUsuario(req, res) {
-  console.log(req.body);
-  res.send("ESTOY EN POST USUARIO");
-}
+const createUsuario = async (req, res, next) => {
+  try {
+    const [result] = await Usuario.insertUsuario(req.body);
+    const [[usuario]] = await Usuario.selectById(result.insertId);
+    res.json(usuario);
+  } catch (error) {
+    next(err);
+  }
+};
 
-const updateUsuario = (req, res) => {
-  console.log(req.params.usuario_id);
-  res.send("ESTOY EN UPDATE USUARIO");
+const updateUsuario = async (req, res, next) => {
+  try {
+    const { usuario_id } = req.params;
+    const [result] = await Usuario.updateById(usuario_id, req.body);
+    const [[usuario]] = await Usuario.selectById(usuario_id);
+    console.log(result);
+    res.json(usuario);
+  } catch (error) {
+    next(err);
+  }
 };
 
 const deleteUsuario = (req, res) => {

@@ -5,7 +5,7 @@ GET {{HOST}}/api/usuarios
 Authorization: API-KEY
 
 ###
-GET {{HOST}}/api/usuarios/2
+GET {{HOST}}/api/usuarios/5
 Authorization: API-KEY
 
 ###
@@ -14,10 +14,35 @@ Authorization: API-KEY
 Content-Type: application/json
 
 {
-  "nombre":"Daniel",
-  "apellido":"Mudry"
+  "nombre_autor":"Maricel",
+  "imagen_autor":"https://thispersondoesnotexist.com/",
+  "email_autor":"mari@gmail.com"
 }
 ###
-PUT {{HOST}}/api/usuarios/55
+PUT {{HOST}}/api/usuarios/13
+Authorization: API-KEY
+Content-Type: application/json
+
+{
+  "nombre_autor":"Madona",
+  "imagen_autor":"https://thispersondoesnotexist.com/",
+  "email_autor":"justi@gmail.com"
+}
 ###
 DELETE {{HOST}}/api/usuarios
+
+
+//empiezo rutas de publicaciones
+###
+GET {{HOST}}/api/publicaciones
+Authorization: API-KEY
+
+
+###
+GET {{HOST}}/api/publicaciones/5
+Authorization: API-KEY
+
+###
+POST {{HOST}}/api/publicaciones/5
+Authorization: API-KEY
+Content-Type: application/json
