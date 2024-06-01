@@ -5,7 +5,7 @@ GET {{HOST}}/api/usuarios
 Authorization: API-KEY
 
 ###
-GET {{HOST}}/api/usuarios/1
+GET {{HOST}}/api/usuarios/2
 Authorization: API-KEY
 
 ###
@@ -39,7 +39,7 @@ Authorization: API-KEY
 
 
 ###
-GET {{HOST}}/api/publicaciones/1
+GET {{HOST}}/api/publicaciones/2
 Authorization: API-KEY
 
 ###
@@ -47,3 +47,21 @@ POST {{HOST}}/api/publicaciones/
 Authorization: API-KEY
 Content-Type: application/json
 
+{
+  "titulo": "ESCALADFA",
+  "descripcion": "LA MONTAÑA",
+  "fecha": "2024-02-12",
+  "autores_idautores": 1,
+  "categorias_idcategorias1":2
+}
+###
+PUT {{HOST}}/api/publicaciones/10
+Authorization: API-KEY
+Content-Type: application/json
+
+{
+  "titulo": "BARILOCHE",
+  "descripcion": "NOS FUIMOS A BARILO, y al cerro catedral",
+  "fecha": "2023-05-12",
+  "categorias_idcategorias1":1
+}
