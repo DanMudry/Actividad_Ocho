@@ -7,7 +7,7 @@ const {
 //ruta /api/publicaciones
 router.get("/", getAllPublicaciones);
 router.get("/:usuario_id", getPublicacionById);
-router.post("/:usuario_id", createPublicacion);
+router.post("/", createPublicacion);
 
 /*router.post("/", createUsuario);
 router.delete("/:usuario_id", deleteUsuario);

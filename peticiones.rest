@@ -5,7 +5,7 @@ GET {{HOST}}/api/usuarios
 Authorization: API-KEY
 
 ###
-GET {{HOST}}/api/usuarios/5
+GET {{HOST}}/api/usuarios/1
 Authorization: API-KEY
 
 ###
@@ -14,12 +14,12 @@ Authorization: API-KEY
 Content-Type: application/json
 
 {
-  "nombre_autor":"Maricel",
+  "nombre_autor":"Jorge",
   "imagen_autor":"https://thispersondoesnotexist.com/",
-  "email_autor":"mari@gmail.com"
+  "email_autor":"Jorge@gmail.com"
 }
 ###
-PUT {{HOST}}/api/usuarios/13
+PUT {{HOST}}/api/usuarios/1
 Authorization: API-KEY
 Content-Type: application/json
 
@@ -39,10 +39,11 @@ Authorization: API-KEY
 
 
 ###
-GET {{HOST}}/api/publicaciones/5
+GET {{HOST}}/api/publicaciones/1
 Authorization: API-KEY
 
 ###
-POST {{HOST}}/api/publicaciones/5
+POST {{HOST}}/api/publicaciones/
 Authorization: API-KEY
 Content-Type: application/json
+
