@@ -9,6 +9,5 @@ const {
 router.get("/", getAllPublicaciones);
 router.get("/:usuario_id", getPublicacionById);
 router.post("/", createPublicacion);
-router.put("/:publ_id", updatePublicacion);
 
 module.exports = router;

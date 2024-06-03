@@ -14,7 +14,7 @@ const getUsuarioById = async (req, res, next) => {
   try {
     const [result] = await Usuario.selectById(req.params.usuario_id);
     if (result.length === 0) {
-      return res.status(404).json({ fatal: "Usuario No Encontrado" });
+      return res.status(404).json({ Problema: "Usuario No Encontrado" });
     }
     res.json(result[0]);
   } catch (error) {

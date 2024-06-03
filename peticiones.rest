@@ -5,7 +5,7 @@ GET {{HOST}}/api/usuarios
 Authorization: API-KEY
 
 ###
-GET {{HOST}}/api/usuarios/1
+GET {{HOST}}/api/usuarios/3
 Authorization: API-KEY
 
 ###
@@ -14,19 +14,19 @@ Authorization: API-KEY
 Content-Type: application/json
 
 {
-  "nombre_autor":"Daniel",
+  "nombre_autor":"Valentino",
   "imagen_autor":"https://thispersondoesnotexist.com/",
-  "email_autor":"daniel@gmail.com"
+  "email_autor":"ANA@gmail.com"
 }
 ###
-PUT {{HOST}}/api/usuarios/1
+PUT {{HOST}}/api/usuarios/3
 Authorization: API-KEY
 Content-Type: application/json
 
 {
-  "nombre_autor":"Daniel Guillermo",
+  "nombre_autor":"Valentino Ducato",
   "imagen_autor":"https://thispersondoesnotexist.com/",
-  "email_autor":"daniel@gmail.com"
+  "email_autor":"valenducato@gmail.com"
 }
 
 
@@ -34,12 +34,14 @@ Content-Type: application/json
 
 //empiezo rutas de publicaciones
 ###
+//TRAE TODAS LAS PUBLICACIONES
 GET {{HOST}}/api/publicaciones
 Authorization: API-KEY
 
 
 ###
-GET {{HOST}}/api/publicaciones/1
+//TRAE LAS PUBLICACIONES X ID USUARIO
+GET {{HOST}}/api/publicaciones/3
 Authorization: API-KEY
 
 ###
@@ -48,23 +50,10 @@ Authorization: API-KEY
 Content-Type: application/json
 
 {
-  "titulo": "ESCALADA",
-  "descripcion": "LA MONTAÑA",
+  "titulo": "PESCANDO Y VIAJANDO",
+  "descripcion": "NOS FUIMOS A PESCAR",
   "fecha": "2024-02-12",
-  "categoria":"DEPORTE",
-  "autores_idautores": 1
+  "categoria":"VIAJE",
+  "autores_idautores":2
 }
-###
-PUT {{HOST}}/api/publicaciones/20
-Authorization: API-KEY
-Content-Type: application/json
-
-{
-  "titulo": "ESCALADA",
-  "descripcion": "LA MONTAÑA",
-  "fecha": "2024-02-12",
-  "categoria":"DEPORTE",
-  "autores_idautores": 1,
-}
-
 

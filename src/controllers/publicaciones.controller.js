@@ -21,11 +21,9 @@ const getPublicacionById = async (req, res, next) => {
       req.params.usuario_id
     );
     if (result.length === 0) {
-      return res
-        .status(404)
-        .json({
-          Aviso: "No hay publicaciones de usuario " + req.params.usuario_id,
-        });
+      return res.status(404).json({
+        Aviso: "No hay publicaciones de usuario " + req.params.usuario_id,
+      });
     }
     res.json(result);
   } catch (error) {
@@ -47,25 +45,8 @@ const createPublicacion = async (req, res, next) => {
   }
 };
 
-const updatePublicacion = async (req, res, next) => {
-  try {
-    const { publ_id } = req.params;
-    const [result] = await Publicacion.updateByIdPublicacion(publ_id, req.body);
-    console.log(result);
-    if (result.affectedRows === 0) {
-      return res.status(404).json({ Problema: "Publicacion no encontrada" });
-    }
-    const [[publi]] = await Publicacion.getPublicacionByIdPubl(publ_id);
-
-    res.json(publi);
-  } catch (error) {
-    next(err);
-  }
-};
-
 module.exports = {
   getAllPublicaciones,
   getPublicacionById,
   createPublicacion,
-  updatePublicacion,
 };
