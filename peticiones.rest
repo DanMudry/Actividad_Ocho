@@ -5,7 +5,7 @@ GET {{HOST}}/api/usuarios
 Authorization: API-KEY
 
 ###
-GET {{HOST}}/api/usuarios/2
+GET {{HOST}}/api/usuarios/1
 Authorization: API-KEY
 
 ###
@@ -14,9 +14,9 @@ Authorization: API-KEY
 Content-Type: application/json
 
 {
-  "nombre_autor":"Jorge",
+  "nombre_autor":"Daniel",
   "imagen_autor":"https://thispersondoesnotexist.com/",
-  "email_autor":"Jorge@gmail.com"
+  "email_autor":"daniel@gmail.com"
 }
 ###
 PUT {{HOST}}/api/usuarios/1
@@ -24,12 +24,12 @@ Authorization: API-KEY
 Content-Type: application/json
 
 {
-  "nombre_autor":"Madona",
+  "nombre_autor":"Daniel Guillermo",
   "imagen_autor":"https://thispersondoesnotexist.com/",
-  "email_autor":"justi@gmail.com"
+  "email_autor":"daniel@gmail.com"
 }
-###
-DELETE {{HOST}}/api/usuarios
+
+
 
 
 //empiezo rutas de publicaciones
@@ -39,7 +39,7 @@ Authorization: API-KEY
 
 
 ###
-GET {{HOST}}/api/publicaciones/2
+GET {{HOST}}/api/publicaciones/1
 Authorization: API-KEY
 
 ###
@@ -48,20 +48,23 @@ Authorization: API-KEY
 Content-Type: application/json
 
 {
-  "titulo": "ESCALADFA",
+  "titulo": "ESCALADA",
   "descripcion": "LA MONTAÑA",
   "fecha": "2024-02-12",
-  "autores_idautores": 1,
-  "categorias_idcategorias1":2
+  "categoria":"DEPORTE",
+  "autores_idautores": 1
 }
 ###
-PUT {{HOST}}/api/publicaciones/10
+PUT {{HOST}}/api/publicaciones/20
 Authorization: API-KEY
 Content-Type: application/json
 
 {
-  "titulo": "BARILOCHE",
-  "descripcion": "NOS FUIMOS A BARILO, y al cerro catedral",
-  "fecha": "2023-05-12",
-  "categorias_idcategorias1":1
+  "titulo": "ESCALADA",
+  "descripcion": "LA MONTAÑA",
+  "fecha": "2024-02-12",
+  "categoria":"DEPORTE",
+  "autores_idautores": 1,
 }
+
+

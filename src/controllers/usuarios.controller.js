@@ -37,7 +37,10 @@ const updateUsuario = async (req, res, next) => {
     const { usuario_id } = req.params;
     const [result] = await Usuario.updateById(usuario_id, req.body);
     const [[usuario]] = await Usuario.selectById(usuario_id);
-    console.log(result);
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ Problema: "Autor no encontrado" });
+    }
+
     res.json(usuario);
   } catch (error) {
     next(err);
