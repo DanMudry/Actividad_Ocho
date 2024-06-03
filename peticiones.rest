@@ -1,0 +1,59 @@
+@PORT=3000
+@HOST = http://localhost:{{PORT}}
+
+GET {{HOST}}/api/usuarios
+Authorization: API-KEY
+
+###
+GET {{HOST}}/api/usuarios/3
+Authorization: API-KEY
+
+###
+POST {{HOST}}/api/usuarios
+Authorization: API-KEY
+Content-Type: application/json
+
+{
+  "nombre_autor":"Valentino",
+  "imagen_autor":"https://thispersondoesnotexist.com/",
+  "email_autor":"ANA@gmail.com"
+}
+###
+PUT {{HOST}}/api/usuarios/3
+Authorization: API-KEY
+Content-Type: application/json
+
+{
+  "nombre_autor":"Valentino Ducato",
+  "imagen_autor":"https://thispersondoesnotexist.com/",
+  "email_autor":"valenducato@gmail.com"
+}
+
+
+
+
+//empiezo rutas de publicaciones
+###
+//TRAE TODAS LAS PUBLICACIONES
+GET {{HOST}}/api/publicaciones
+Authorization: API-KEY
+
+
+###
+//TRAE LAS PUBLICACIONES X ID USUARIO
+GET {{HOST}}/api/publicaciones/3
+Authorization: API-KEY
+
+###
+POST {{HOST}}/api/publicaciones/
+Authorization: API-KEY
+Content-Type: application/json
+
+{
+  "titulo": "PESCANDO Y VIAJANDO",
+  "descripcion": "NOS FUIMOS A PESCAR",
+  "fecha": "2024-02-12",
+  "categoria":"VIAJE",
+  "autores_idautores":2
+}
+
